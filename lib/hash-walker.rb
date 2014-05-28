@@ -1,6 +1,6 @@
-require "hash_walker/version"
-require "hash_walker/walker"
-require "hash_walker/walk"
+require "hash-walker/version"
+require "hash-walker/walker"
+require "hash-walker/walk"
 
 require "active_support/core_ext/hash/indifferent_access"
 
