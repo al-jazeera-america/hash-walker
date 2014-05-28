@@ -23,8 +23,14 @@ you would walk it with the following ruby DSL:
     HashWalker.walk(hash) do
       cache do
         strategy do
-          type.should == 'lazy'
+          puts type
         end
       end
     end
+```
+
+You will get the following output:
+
+```
+lazy
 ```
