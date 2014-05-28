@@ -42,3 +42,8 @@ TODO:
 1. Iterate through arrays
 2. Decide how to handle non existant keys
 3. Decide if to allow assignment and how to handle (or is this read only?)
+
+## Contributing
+
+Clone and send a pull request, preferably with a test.
+Run the tests using `rake`
