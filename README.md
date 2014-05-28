@@ -4,7 +4,8 @@ Walk a hash like a hash walker would.
 
 A ruby DSL for walking through hashes. Its the reverse of XmlBuilder. Keys can be symbols or strings, it works either way.
 
-[![Build Status](https://secure.travis-ci.org/galori/hash-walker.png?branch=master)](http://travis-ci.org/galori/hash-walker)
+[![Build Status](https://secure.travis-ci.org/galori/hash-walker.png?branch=master)](http://travis-ci.org/galori/hash-walker) [![Code Climate](https://codeclimate.com/github/galori/hash-walker.png)](https://codeclimate.com/github/galori/hash-walker)
+
 
 ## Usage
 
