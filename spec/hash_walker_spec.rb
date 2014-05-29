@@ -66,6 +66,22 @@ describe HashWalker do
         string_key.should == 'String Value'
       end
     end
+
+    it 'should work with strings as symbols' do
+      hash = {:string_key => 'String Value'}
+      HashWalker.walk(hash) do
+        string_key.should == 'String Value'
+      end
+    end
+
+    it 'should iterate through arrays' do
+      hash = {:stories => [{:a => 1},{:a => 2},{:a => 3}]}
+      HashWalker.walk(hash) do
+        stories do
+          puts a
+        end
+      end
+    end
   end
 end
 
