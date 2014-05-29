@@ -76,9 +76,12 @@ describe HashWalker do
 
     it 'should iterate through arrays' do
       hash = {:stories => [{:a => 1},{:a => 2},{:a => 3}]}
+      i=0
+
       HashWalker.walk(hash) do
         stories do
-          puts a
+          i+=1
+          a.should == i
         end
       end
     end

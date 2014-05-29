@@ -17,16 +17,17 @@ module HashWalker
 
     def method_missing(*args,&block)
       attribute_name = args[0]
-      puts "in method_missing: @hash=#{@hash.inspect}"
-      puts "in method_missing: attribute_name=#{attribute_name}"
-      puts "in method_missing: block=#{block}"
-
-
       value = @hash[attribute_name] if @hash.is_a? Hash
 
-      if @hash.is_a? Array
+      puts "in method_missing: @hash=#{@hash.inspect}"
+      puts "in method_missing: attribute_name=#{attribute_name}"
+      puts "in method_missing: block=#{block.inspect}"
+      puts "in method missing: value=#{value.inspect}"
+
+
+      if value.is_a? Array
         walk_type = 'Array'
-      elsif @hash.is_a? Hash
+      elsif value.is_a? Hash
         walk_type = 'Hash'
       else
         walk_type = 'Primitive'
@@ -49,11 +50,13 @@ module HashWalker
       if walk_type == 'Array'
         puts "taking the next step: as a array"
         puts "in array"
-        @hash.each do |entry|
-          puts "walking an array. entry=#{entry.inspect} block=#{block.inspect}"
+        map_ret = value.map do |entry|
+          puts "////////////////// walking an array. entry=#{entry.inspect} block=#{block.inspect}"
           walker = HashWalker::Walker.new(:hash => entry, :block => block)
-          return walker.walk!
+          walker.walk!
         end
+
+        retun map_ret
       end
     end
 
