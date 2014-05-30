@@ -74,14 +74,27 @@ describe HashWalker do
       end
     end
 
+    it 'should do something with a block on a value' do
+      hash = {:a => 'b'}
+      dummy = double('dummy')
+      dummy.should_receive(:block_was_run)
+      HashWalker.walk(hash) do
+        a do
+          dummy.block_was_run
+        end
+      end
+    end
+
     it 'should iterate through arrays' do
       hash = {:stories => [{:a => 1},{:a => 2},{:a => 3}]}
-      i=0
+      dummy = double('dummy')
+      dummy.should_receive(:set_a_value).with(1).ordered
+      dummy.should_receive(:set_a_value).with(2).ordered
+      dummy.should_receive(:set_a_value).with(3).ordered
 
       HashWalker.walk(hash) do
         stories do
-          i+=1
-          a.should == i
+          dummy.set_a_value(a)
         end
       end
     end
