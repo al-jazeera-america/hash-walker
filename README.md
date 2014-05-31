@@ -6,7 +6,6 @@ A ruby DSL for walking through hashes. Its the reverse of XmlBuilder or jbuilder
 
 [![Build Status](https://secure.travis-ci.org/al-jazeera-america/hash-walker.png?branch=master)](http://travis-ci.org/al-jazeera-america/hash-walker) [![Code Climate](https://codeclimate.com/github/galori/hash-walker.png)](https://codeclimate.com/al-jazeera-america/hash-walker`)
 
-
 ## Usage
 
 given this hash:
