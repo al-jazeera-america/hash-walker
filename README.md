@@ -102,3 +102,36 @@ Run the tests using `rake`
 * TODO: access to key names
 * TODO: generate the DSL based on an existing hash (like a VCR cassette?)
 * TODO: don't look for Hash's and Array's, look for objects that act like Hash's and act like Arrays. (objects and enumarbles?)
+* TODO: Create an operator? (possibly using superators?) For example, a tilde unary operator is possible:
+
+so instead of
+
+```ruby
+   HashWalker::Walk(my_hash) do
+     stories do
+       puts title
+     end
+   end
+```
+
+we could do
+
+```ruby
+   ~my_hash do
+     stories do
+       puts title
+     end
+   end
+```
+
+or
+
+we could do
+
+```ruby
+   my_hash ~~~ do
+     stories do
+       puts title
+     end
+   end
+```
