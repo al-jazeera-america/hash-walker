@@ -98,8 +98,41 @@ describe HashWalker do
         end
       end
     end
+
+    it 'should iterate through arrays and return an array of the results like .map' do
+      hash = {:stories => [{:a => 1},{:a => 2},{:a => 3}]}
+      HashWalker.walk(hash) do
+        stories do
+          a
+        end.should == [1,2,3]
+      end
+    end
+
+    it 'should skip missing keys or attributes without raising an error' do
+      hash = {:stories => 'something'}
+      expect {
+        HashWalker.walk(hash) do
+          stories do
+            some_non_existant_key
+          end
+        end
+      }.not_to raise_error
+    end
   end
 end
 
 
-# TODO symbols vs string keys?
+# TODO: unknown keys
+# TODO: map vs. join? at least test it
+# TODO: ability to reach out to parent (parent. something?)
+# TODO: ability to reach out to siblings?
+# TODO: Top level arrays/ (are they valid JSON and valid HAshes?)
+# TODO: accept JSON or HASH or HTTParty response
+# TODO: HTTParty adapter.   httparty_response.walk()
+# TODO: Adapter for other libaries? VCR? Mechanize? REGEXP? Nokogiri?
+# TODO: return a value from the entire outer bloc
+# TODO: test more stuff at the top level / outer block level
+# TODO: access to key names
+# TODO: generate the DSL based on an existing hash (like a VCR cassette?)
+# TODO: option to raise an error or not raise an error if referencing a non-existant key
+# TODO: don't look for Hash's and Array's, look for objects that act like Hash's and act like Arrays. (objects and enumarbles?)

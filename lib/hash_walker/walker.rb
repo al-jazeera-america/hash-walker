@@ -12,7 +12,7 @@ module HashWalker
     end
 
     def value
-      @hash_fragment[@attribute_name]
+      @hash_fragment.respond_to?('keys') && @hash_fragment[@attribute_name]
     end
 
     def next_step_is_array?
@@ -20,11 +20,11 @@ module HashWalker
     end
 
     def get_stepper
-      next_step_is_array? ? Stepper::Array.new : Stepper::Hash.new
+      next_step_is_array? ? Stepper::Array : Stepper::Hash
     end
 
     def take_one_step
-      stepper = get_stepper
+      stepper = get_stepper.new
       stepper.hash_fragment = value
       stepper.block = @block
       stepper.step!
