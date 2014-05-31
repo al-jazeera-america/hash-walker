@@ -122,7 +122,6 @@ describe HashWalker do
 end
 
 
-# TODO: unknown keys
 # TODO: map vs. join? at least test it
 # TODO: ability to reach out to parent (parent. something?)
 # TODO: ability to reach out to siblings?
