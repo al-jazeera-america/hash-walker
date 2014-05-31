@@ -2,9 +2,9 @@
 
 Walk a hash like a hash walker would.
 
-A ruby DSL for walking through hashes. Its the reverse of XmlBuilder. Keys can be symbols or strings, it works either way.
+A ruby DSL for walking through hashes. Its the reverse of XmlBuilder or jbuilder. Works with symbol or string keys.
 
-[![Build Status](https://secure.travis-ci.org/galori/hash-walker.png?branch=master)](http://travis-ci.org/galori/hash-walker) [![Code Climate](https://codeclimate.com/github/galori/hash-walker.png)](https://codeclimate.com/github/galori/hash-walker`)
+[![Build Status](https://secure.travis-ci.org/al-jazeera-america/hash-walker.png?branch=master)](http://travis-ci.org/al-jazeera-america/hash-walker) [![Code Climate](https://codeclimate.com/github/galori/hash-walker.png)](https://codeclimate.com/al-jazeera-america/hash-walker`)
 
 
 ## Usage
@@ -97,8 +97,9 @@ Run the tests using `rake`
 * TODO: HTTParty adapter.   httparty_response.walk()
 * TODO: Adapter for other libaries? VCR? Mechanize? REGEXP? Nokogiri?
 * TODO: return a value from the entire outer bloc
-* TODO: test more stuff at the top level / outer block level
+* TODO: test more stuff at the top level / outer block level.
+* TODO: top level array? (then its not a hash)
+* TODO: support for objects and enumerables along with Hash's and Arrays
 * TODO: access to key names
 * TODO: generate the DSL based on an existing hash (like a VCR cassette?)
-* TODO: option to raise an error or not raise an error if referencing a non-existant key
 * TODO: don't look for Hash's and Array's, look for objects that act like Hash's and act like Arrays. (objects and enumarbles?)

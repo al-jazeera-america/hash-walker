@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["gal@steinitz.com"]
   spec.summary       = %q{Walk a hash like a hash walker would}
   spec.description   = %q{a Ruby DSL for walking through a Hash and processing it}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/al-jazeera-america/hash-walker"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
